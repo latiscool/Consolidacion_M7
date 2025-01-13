@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Información de Laboratorios{% endblock %}
+
+{% block content %}
+<h2 style="text-align: center;">Información de Laboratorios</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Ciudad</th>
+            <th>País</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for laboratorio in laboratorios %}
+        <tr>
+            <td>{{ laboratorio.nombre }}</td>
+            <td>{{ laboratorio.ciudad }}</td>
+            <td>{{ laboratorio.pais }}</td>
+            <td><a href="{% url 'laboratorio_edit' laboratorio.id %}">Editar</a></td>
+            <td><a href="{% url 'laboratorio_delete' laboratorio.id %}" class="cancel">Eliminar</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<p>¿Información de los Laboratorios?</p>
+<a href="{% url 'laboratorio_new' %}" style="margin-left:auto; margin-right:auto;">Agregar nuevo laboratorio</a>
+{% endblock %}

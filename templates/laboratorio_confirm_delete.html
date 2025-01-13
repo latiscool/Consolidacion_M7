@@ -1,0 +1,10 @@
+<h1>Eliminar Laboratorio</h1>
+
+<p>¿Estás seguro que deseas eliminar el laboratorio "{{ laboratorio.nombre }}"?</p>
+
+<form method="post">
+  {% csrf_token %}
+  <button type="submit">Confirmar</button>
+</form>
+
+<a href="{% url 'laboratorio_list' %}">Cancelar</a>
