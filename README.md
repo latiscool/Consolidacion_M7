@@ -62,11 +62,9 @@ Otorga todos los privilegios sobre el esquema "public" específicamente.
 Permite al usuario realizar operaciones como crear, modificar y eliminar objetos (tablas, vistas, funciones, etc.) dentro del esquema public.
 No otorga privilegios a nivel de base de datos.
 
-#### # Cual usar?
-
-Esta sentencia GRANT asegura que Django tenga los permisos necesarios para realizar todas las operaciones requeridas en la base de datos del proyecto, facilitando el desarrollo y la gestión de la aplicación.
-
+```	
 "GRANT ALL PRIVILEGES ON DATABASE db_final_orm TO userdjango":
+```	
 Otorga todos los privilegios a nivel de la base de datos "db_final_orm".
 Incluye privilegios como:
 CREATE: Permite crear nuevos esquemas y publicaciones en la base de datos.
@@ -234,7 +232,7 @@ Tablas correspondientes a los modelos de Django:
 
 
 ## #Etapa 8: Configuración del Sitio Administrativo
-#### #Registrando los Modelos
+#### #Registrando los Modelos, en laboratorio/urls.py
 
 
 from django.contrib import admin
@@ -404,7 +402,7 @@ python manage.py showmigrations laboratorio
 
 ## #Etapa 11: Pruebas Unitarias
 
-  Se crear archivo test.py para crear el script de las pruebas unitarias, para ejecutar de la sgte manera;
+  Se crea un archivo **laboratorio/test.py** para ejecutar el script de las pruebas unitarias:
 
 **Pero antes se tuvo que agregar un permiso al usuario en PSQL, porque denegaba el permiso al ejcutar las prueba unitarias**
 
