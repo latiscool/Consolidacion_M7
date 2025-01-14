@@ -234,7 +234,7 @@ Tablas correspondientes a los modelos de Django:
 ## #Etapa 8: Configuración del Sitio Administrativo
 #### #Registrando los Modelos, en laboratorio/urls.py
 
-
+```	
 from django.contrib import admin
 from .models import Laboratorio, DirectorGeneral, Producto
 
@@ -251,7 +251,7 @@ class ProductoAdmin(admin.ModelAdmin):
     list_display = ('nombre', 'laboratorio', 'f_fabricacion', 'p_costo', 'p_venta')
     list_filter = ('laboratorio',)
     search_fields = ('nombre',)
-
+```	
 
 ### # EXPLICANDO SINTAXIS DEL BLOQUE
  ```
