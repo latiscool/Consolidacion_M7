@@ -232,7 +232,7 @@ Tablas correspondientes a los modelos de Django:
 
 
 ## #Etapa 8: Configuración del Sitio Administrativo
-#### #Registrando los Modelos, en laboratorio/urls.py
+#### #Registrando los Modelos, en laboratorio/admin.py
 
 ```	
 from django.contrib import admin
