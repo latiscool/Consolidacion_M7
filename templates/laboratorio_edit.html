@@ -1,24 +1,38 @@
 {% extends "base.html" %}
+<!-- Extiende la plantilla base "base.html" para reutilizar su diseño y estilos generales -->
 
 {% block title %}Actualizar Laboratorios{% endblock %}
+<!-- Define el título de la página como "Actualizar Laboratorios", reemplazando el bloque 'title' de la plantilla base -->
+
 {% block content %}
+<!-- Inicia el bloque de contenido que será renderizado en la sección 'content' de la plantilla base -->
 
 <h1 style="text-align: center;">Actualizar Laboratorios</h1>
-
+<!-- Título principal de la página, centrado -->
 
 <form method="post">
     {% csrf_token %}
+    <!-- El formulario utiliza el método POST para enviar los datos -->
+    <!-- {% csrf_token %} es una etiqueta de Django que agrega un token CSRF (Cross-Site Request Forgery) para proteger el formulario contra ataques CSRF -->
     <table>
         {{ form.as_table }}
+        <!-- Renderiza automáticamente los campos del formulario como filas de una tabla -->
         <tr>
             <td colspan="2" style="text-align:center">
                 <input type="submit" value="Guardar">
+                <!-- Botón para enviar el formulario y guardar los cambios -->
                 <a href="{% url 'laboratorio_list' %}" class="cancel">Cancelar</a>
+                <!-- Enlace para cancelar la acción y regresar a la lista de laboratorios -->
             </td>
         </tr>
     </table>
 </form>
+
 <p>¿Información de los Laboratorios?</p>
+<!-- Texto que invita al usuario a consultar más información sobre los laboratorios -->
+
 <a href="{% url 'laboratorio_list' %}" style="margin-left:auto; margin-right:auto;">Ir a información de los Laboratorios</a>
+<!-- Enlace para redirigir al usuario a la lista de laboratorios -->
 
 {% endblock %}
+<!-- Finaliza el bloque de contenido -->

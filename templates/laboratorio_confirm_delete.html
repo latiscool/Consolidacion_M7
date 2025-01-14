@@ -1,10 +1,18 @@
 <h1>Eliminar Laboratorio</h1>
+<!-- Título principal de la página que indica la acción que se está realizando (eliminar un laboratorio) -->
 
 <p>¿Estás seguro que deseas eliminar el laboratorio "{{ laboratorio.nombre }}"?</p>
+<!-- Mensaje de confirmación que muestra el nombre del laboratorio a eliminar.
+     Se utiliza la variable 'laboratorio.nombre' para personalizar el mensaje con el nombre específico del laboratorio. -->
 
 <form method="post">
   {% csrf_token %}
+  <!-- El formulario utiliza el método POST para enviar la solicitud de eliminación.
+       {% csrf_token %} es una etiqueta de Django que agrega un token CSRF (Cross-Site Request Forgery) para proteger el formulario contra ataques CSRF. -->
   <button type="submit">Confirmar</button>
+  <!-- Botón para confirmar la eliminación del laboratorio. Al hacer clic, se envía la solicitud POST. -->
 </form>
 
 <a href="{% url 'laboratorio_list' %}">Cancelar</a>
+<!-- Enlace para cancelar la acción de eliminación y volver a la lista de laboratorios.
+     {% url 'laboratorio_list' %} genera dinámicamente la URL de la vista 'laboratorio_list'. -->

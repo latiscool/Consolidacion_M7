@@ -2,30 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- Declaración del conjunto de caracteres como UTF-8 para soportar caracteres especiales -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Asegura compatibilidad con versiones antiguas de Internet Explorer -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura el diseño para dispositivos móviles, ajustando el ancho al dispositivo -->
     <title>{% block title %}Laboratorios{% endblock %}</title>
+    <!-- Título dinámico que puede ser reemplazado por un bloque en plantillas extendidas -->
+
     <style>
+        /* Estilo para las tablas */
         table {
-        border: 8px outset;
-        border-radius: 10px;
-        border-spacing: 10px;
-        padding: 20px;
-        margin-left: auto;
-        margin-right: auto;
+            border: 8px outset; /* Establece un borde grueso con efecto de relieve */
+            border-radius: 10px; /* Bordes redondeados */
+            border-spacing: 10px; /* Espaciado entre celdas */
+            padding: 20px; /* Relleno interno de la tabla */
+            margin-left: auto;
+            margin-right: auto; /* Centra la tabla horizontalmente */
         }
-        th,td {
-        padding: 5px;
-        border: 1px solid;
+        th, td {
+            padding: 5px; /* Espaciado interno en las celdas */
+            border: 1px solid; /* Borde simple alrededor de cada celda */
         }
     </style>
-
-
 </head>
+
 <body>
     <div class="container">
+        <!-- Contenedor principal donde se insertará el contenido dinámico -->
         {% block content %}
         {% endblock %}
+        <!-- Bloque de contenido que será reemplazado por plantillas extendidas -->
     </div>
 </body>
 </html>

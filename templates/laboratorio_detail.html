@@ -1,8 +1,45 @@
-<h1>Detalle de Laboratorio</h1>
+{% extends "base.html" %}
+<!-- Extiende la plantilla base "base.html" para reutilizar su estructura y estilos generales -->
 
-<p><strong>Nombre:</strong> {{ laboratorio.nombre }}</p>
-<p><strong>Ciudad:</strong> {{ laboratorio.ciudad }}</p>
-<p><strong>País:</strong> {{ laboratorio.pais }}</p>
+{% block title %}Detalle del Laboratorio{% endblock %}
+<!-- Define el título de la página como "Detalle del Laboratorio", reemplazando el bloque 'title' de la plantilla base -->
 
-<a href="{% url 'laboratorio_edit' laboratorio.id %}">Editar</a> |
-<a href="{% url 'laboratorio_list' %}">Volver al listado</a>
+{% block content %}
+<!-- Inicia el bloque de contenido que será renderizado en la sección 'content' de la plantilla base -->
+
+<h1 style="text-align: center;">Detalle del Laboratorio</h1>
+<!-- Título principal de la página, centrado -->
+
+<table>
+    <!-- Tabla para mostrar los detalles del laboratorio -->
+    <tr>
+        <th>Nombre</th>
+        <!-- Encabezado para el campo "Nombre" -->
+        <td>{{ laboratorio.nombre }}</td>
+        <!-- Muestra el valor del campo 'nombre' del objeto 'laboratorio' -->
+    </tr>
+    <tr>
+        <th>Ciudad</th>
+        <!-- Encabezado para el campo "Ciudad" -->
+        <td>{{ laboratorio.ciudad }}</td>
+        <!-- Muestra el valor del campo 'ciudad' del objeto 'laboratorio' -->
+    </tr>
+    <tr>
+        <th>País</th>
+        <!-- Encabezado para el campo "País" -->
+        <td>{{ laboratorio.pais }}</td>
+        <!-- Muestra el valor del campo 'pais' del objeto 'laboratorio' -->
+    </tr>
+</table>
+
+<p style="text-align: center; margin-top: 20px;">
+    <!-- Contenedor para los enlaces de navegación, centrado con margen superior -->
+    <a href="{% url 'laboratorio_edit' laboratorio.id %}" style="margin-right: 10px;">Editar</a>
+    <!-- Enlace para editar el laboratorio actual. Genera dinámicamente la URL utilizando el ID del laboratorio -->
+    |
+    <a href="{% url 'laboratorio_list' %}" style="margin-left: 10px;">Volver al listado</a>
+    <!-- Enlace para regresar a la lista de laboratorios. Genera dinámicamente la URL de la vista 'laboratorio_list' -->
+</p>
+
+{% endblock %}
+<!-- Finaliza el bloque de contenido -->

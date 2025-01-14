@@ -389,6 +389,11 @@ python manage.py showmigrations laboratorio
 
  ![Texto alternativo](images/laboratorio_NEW%20-%20HTML.jpg)
 
+ #### # Vista "DETALLE Laboratorio" (aparece despues de crear un laboratorio)
+
+![Texto alternativo](images/laboratorio_DETALLE%20-%20HTML.jpg)
+
+
 #### # Vista "ACTUALIZAR Laboratorio" 
 
  ![Texto alternativo](images/laboratorio_EDIT%20-%20HTML.jpg)

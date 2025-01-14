@@ -1,13 +1,20 @@
 {% extends "base.html" %}
+<!-- Extiende la plantilla base "base.html" para reutilizar su diseño y estilos generales -->
 
 {% block title %}Información de Laboratorios{% endblock %}
+<!-- Define el título de la página como "Información de Laboratorios", reemplazando el bloque 'title' de la plantilla base -->
 
 {% block content %}
+<!-- Inicia el bloque de contenido que será renderizado en la sección 'content' de la plantilla base -->
+
 <h2 style="text-align: center;">Información de Laboratorios</h2>
+<!-- Título principal de la página, centrado -->
 
 <table>
+    <!-- Tabla para mostrar la lista de laboratorios -->
     <thead>
         <tr>
+            <!-- Encabezados de la tabla -->
             <th>Nombre</th>
             <th>Ciudad</th>
             <th>País</th>
@@ -16,17 +23,27 @@
         </tr>
     </thead>
     <tbody>
+        <!-- Itera sobre la lista 'laboratorios' pasada desde la vista -->
         {% for laboratorio in laboratorios %}
         <tr>
+            <!-- Muestra los valores de cada laboratorio -->
             <td>{{ laboratorio.nombre }}</td>
             <td>{{ laboratorio.ciudad }}</td>
             <td>{{ laboratorio.pais }}</td>
+            <!-- Enlace para editar el laboratorio actual -->
             <td><a href="{% url 'laboratorio_edit' laboratorio.id %}">Editar</a></td>
+            <!-- Enlace para eliminar el laboratorio actual -->
             <td><a href="{% url 'laboratorio_delete' laboratorio.id %}" class="cancel">Eliminar</a></td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
+
 <p>¿Información de los Laboratorios?</p>
+<!-- Texto que invita al usuario a agregar un nuevo laboratorio -->
+
 <a href="{% url 'laboratorio_new' %}" style="margin-left:auto; margin-right:auto;">Agregar nuevo laboratorio</a>
+<!-- Enlace para redirigir al formulario para crear un nuevo laboratorio -->
+
 {% endblock %}
+<!-- Finaliza el bloque de contenido -->
